@@ -5,6 +5,8 @@ import dataStructures.ListSingleE.ListSingle;
 import dataStructures.queue.FIFO;
 import dataStructures.queue.LIFO;
 import dataStructures.stack.Stack;
+import fibonacci.Fibonacci;
+import fibonacci.FibonacciRecursive;
 
 public class Program {
 
@@ -14,7 +16,22 @@ public class Program {
 //        FIFO();
 //        LIFO();
 //        stack();
+
         MapDs();
+
+        fibonacci();
+        fibonacciRecursive();
+        fibonacciDP();
+    }
+
+    private static void fibonacciDP() {
+        System.out.println(new FibonacciRecursive().getElement(12));
+    }
+    private static void fibonacciRecursive() {
+        System.out.println(new FibonacciRecursive().getElement(11));
+    }
+    private static void fibonacci() {
+        System.out.println(new Fibonacci().getElement(10));
     }
 
     private static void ListSingleE() {
