@@ -5,8 +5,12 @@ import dataStructures.ListSingleE.ListSingle;
 import dataStructures.queue.FIFO;
 import dataStructures.queue.LIFO;
 import dataStructures.stack.Stack;
-import fibonacci.Fibonacci;
-import fibonacci.FibonacciRecursive;
+import fibonacci.*;
+import othersAlgorithms.*;
+import othersAlgorithms.BackupSystem.*;
+
+import java.util.ArrayList;
+
 
 public class Program {
 
@@ -19,9 +23,117 @@ public class Program {
 
         MapDs();
 
-        fibonacci();
-        fibonacciRecursive();
-        fibonacciDP();
+//        fibonacci();
+//        fibonacciRecursive();
+//        fibonacciDP();
+
+//        chessQueens();
+//        backupSystem();
+//        subConjuntosBackTracking();
+        troco();
+//        workBooks();
+
+
+    }
+
+
+
+    private static void workBooks() {
+    }
+
+    private static void troco() {
+        Troco troco = new Troco();
+
+        System.out.println("Change is 18:");
+        troco.solution(18, new int[]{5, 2, 1});
+
+        System.out.println("Change is 20:");
+        troco.solution(20, new int[]{5, 2, 1});
+
+        System.out.println("Change is 13:");
+        troco.solution(13, new int[]{5, 2, 1});
+
+        System.out.println("Change is 11:");
+        troco.solution(11, new int[]{5, 2, 1});
+
+        System.out.println("Change is 17:");
+        troco.solution(17, new int[]{5, 2, 1});
+
+        System.out.println("Change is 19:");
+        troco.solution(19, new int[]{5, 2, 1});
+
+        System.out.println("Change is 27:");
+        troco.solution(27, new int[]{5, 2, 1});
+
+        System.out.println("Change is 12:");
+        troco.solution(12, new int[]{5, 3, 1});
+    }
+
+    private static void subConjuntosBackTracking() {
+        SubConjuntosBackTracking subConjuntosBackTracking = new SubConjuntosBackTracking();
+        System.out.println("Input: [] , n = 1\n" + "Output: " + subConjuntosBackTracking.getSubConjuntos(new int[]{}, 1) + "\n");
+        System.out.println("Input: [1,2,3] , n = 0\n" + "Output: " + subConjuntosBackTracking.getSubConjuntos(new int[]{1,2,3}, 0) + "\n");
+        System.out.println("Input: [1,2,3] , n = 1\n" + "Output: " + subConjuntosBackTracking.getSubConjuntos(new int[]{1,2,3}, 1) + "\n");
+        System.out.println("Input: [1,2,3] , n = 2\n" + "Output: " + subConjuntosBackTracking.getSubConjuntos(new int[]{1,2,3}, 2) + "\n");
+        System.out.println("Input: [1,2,3,4,5,6,7,8,9,10] , n = 2\n" + "Output: " + subConjuntosBackTracking.getSubConjuntos(new int[]{1,2,3,4,5,6,7,8,9,10}, 2) + "\n");
+        System.out.println("Input: [1,2,3,4,5,6,7,8,9,10] , n = 3\n" + "Output: " + subConjuntosBackTracking.getSubConjuntos(new int[]{1,2,3,4,5,6,7,8,9,10}, 3) + "\n");
+        System.out.println("Input: [1,2,3,4,5,6,7,8,9,10] , n = 4\n" + "Output: " + subConjuntosBackTracking.getSubConjuntos(new int[]{1,2,3,4,5,6,7,8,9,10}, 4) + "\n");
+        System.out.println("Input: [1,2,3,4,5,6,7,8,9,10] , n = 5\n" + "Output: " + subConjuntosBackTracking.getSubConjuntos(new int[]{1,2,3,4,5,6,7,8,9,10}, 5) + "\n");
+    }
+    private static void backupSystem() {
+        BackupSystem backupSystem = new BackupSystem();
+        Batch batch = new NewBatch(new int[]{70, 10, 20, 40, 50, 60, 50, 100, 100});
+        System.out.println("should be 6: " + backupSystem.getMinimumTapeCount(batch));
+
+        Batch batch2 = new NewBatch(new int[]{70, 10, 20});
+        System.out.println("should be 2: " + backupSystem.getMinimumTapeCount(batch2));
+
+        Batch batch3 = new NewBatch(new int[]{70, 30});
+        System.out.println("should be 1: " + backupSystem.getMinimumTapeCount(batch3));
+
+        Batch batch4 = new NewBatch(new int[]{70, 10, 20, 30});
+        System.out.println("should be 2: " + backupSystem.getMinimumTapeCount(batch4));
+    }
+    private static void chessQueens() {
+        ChessQueens chessQueens = new ChessQueens();
+
+        class QuestionList {
+            private int[][] board;
+            private int queens;
+
+            public QuestionList(int[][] board, int queens) {
+                this.board = board;
+                this.queens = queens;
+            }
+
+            public int[][] getBoard() {
+                return board;
+            }
+
+            public int getQueens() {
+                return queens;
+            }
+        }
+
+        ArrayList<QuestionList> inputsArray = new ArrayList<>();
+        inputsArray.add(new QuestionList(new int[][]{{0,0,0,0}, {0,0,0,0}, {0,0,0,0}, {0,0,0,0}}, 4));
+        inputsArray.add(new QuestionList(new int[][]{{0,0,0}, {0,0,0}, {0,0,0}}, 5));
+
+        inputsArray.add(new QuestionList(new int[][]{{0,0,0,0}, {0,0,0,0}, {0,0,0,0}, {0,0,0,0}}, 5));
+        inputsArray.add(new QuestionList(new int[][]{{0,0,0,0}, {0,0,0,0}, {0,0,0,0}, {0,0,0,0}}, 6));
+        inputsArray.add(new QuestionList(new int[][]{{0,0,0,0}, {0,0,0,0}, {0,0,0,0}, {0,0,0,0}}, 7));
+        inputsArray.add(new QuestionList(new int[][]{{0,0,0,0}, {0,0,0,0}, {0,0,0,0}, {0,0,0,0}}, 8));
+
+        inputsArray.add(new QuestionList(new int[][]{{0,0,0,0,0}, {0,0,0,0,0}, {0,0,0,0,0}, {0,0,0,0,0}, {0,0,0,0,0}}, 5));
+        inputsArray.add(new QuestionList(new int[][]{{0,0,0,0,0,0}, {0,0,0,0,0,0}, {0,0,0,0,0,0}, {0,0,0,0,0,0}, {0,0,0,0,0,0}, {0,0,0,0,0,0}}, 6));
+        inputsArray.add(new QuestionList(new int[][]{{0,0,0,0,0,0,0}, {0,0,0,0,0,0,0}, {0,0,0,0,0,0,0}, {0,0,0,0,0,0,0}, {0,0,0,0,0,0,0}, {0,0,0,0,0,0,0}, {0,0,0,0,0,0,0}}, 7));
+        inputsArray.add(new QuestionList(new int[][]{{0,0,0,0,0,0,0,0}, {0,0,0,0,0,0,0,0}, {0,0,0,0,0,0,0,0}, {0,0,0,0,0,0,0,0}, {0,0,0,0,0,0,0,0}, {0,0,0,0,0,0,0,0}, {0,0,0,0,0,0,0,0}, {0,0,0,0,0,0,0,0}}, 8));
+
+        for (QuestionList question : inputsArray) {
+            if (chessQueens.solution(question.getBoard(), question.getQueens())) {
+                chessQueens.getSuccessAnswer();
+            } else chessQueens.getFailedAnswer();
+        }
     }
 
     private static void fibonacciDP() {

@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 public class Map<K, V> {
 
-    private class Entry<K, V> {
-        private K key;
+    private static class Entry<K, V> {
+        private final K key;
         private V value;
         private Entry<K, V> next;
 
@@ -34,6 +34,7 @@ public class Map<K, V> {
             this.next = next;
         }
     }
+
     private final Integer size = 10;
     private Entry<K, V>[] table;
 
@@ -54,18 +55,19 @@ public class Map<K, V> {
             pointer.setValue(value);
             return;
         }
+
         if (pointer == null) {
             table[hashModule] = entry;
         } else {
-            while (pointer.getNext() != null) {
 
+            while (pointer.getNext() != null) {
                 if (pointer.getKey() == key) {
                     pointer.setValue(value);
                     return;
                 }
-
                 pointer = pointer.getNext();
             }
+
             pointer.setNext(entry);
         }
     }
@@ -77,6 +79,5 @@ public class Map<K, V> {
     }
 
     public void clear() {}
-
 
 }
