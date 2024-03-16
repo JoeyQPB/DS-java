@@ -30,7 +30,7 @@ public class Program {
 //        chessQueens();
 //        backupSystem();
 //        subConjuntosBackTracking();
-        troco();
+//        troco();
 //        workBooks();
 
 
@@ -137,7 +137,7 @@ public class Program {
     }
 
     private static void fibonacciDP() {
-        System.out.println(new FibonacciRecursive().getElement(12));
+        System.out.println(FibonacciDP.getElement(12));
     }
     private static void fibonacciRecursive() {
         System.out.println(new FibonacciRecursive().getElement(11));

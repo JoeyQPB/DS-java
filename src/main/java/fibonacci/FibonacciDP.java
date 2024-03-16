@@ -4,16 +4,21 @@ import java.util.ArrayList;
 
 public class FibonacciDP {
 
-    private final ArrayList<Long> fibonacciList = new ArrayList<>();
+    private static final ArrayList<Long> fibonacciList = new ArrayList<>();
 
     public FibonacciDP () {}
 
-    public Long getElement(int p) {
-        if (fibonacciList.get(p) == null) {
-            if (p == 0) fibonacciList.add(p, -1L);
-            if (p == 1 || p == 2) fibonacciList.add(p, 1L);
-
-            fibonacciList.add(p, getElement(p-1) + getElement(p-2));
+    public static Long getElement(int p) {
+        if (fibonacciList.size() <= p) {
+            for (int i = fibonacciList.size(); i <= p; i++) {
+                if (i <= 0) {
+                    fibonacciList.add(0L);
+                } else if (i == 1 || i == 2) {
+                    fibonacciList.add(1L);
+                } else {
+                    fibonacciList.add(fibonacciList.get(i - 1) + fibonacciList.get(i - 2));
+                }
+            }
         }
 
         return fibonacciList.get(p);
